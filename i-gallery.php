@@ -4,7 +4,7 @@
  * Plugin Name: I Gallery
  * Plugin URI: https://agencialaf.com
  * Description: Descrição do I Gallery.
- * Version: 0.0.2
+ * Version: 0.0.3
  * Author: Ingo Stramm
  * Text Domain: ig
  * License: GPLv2

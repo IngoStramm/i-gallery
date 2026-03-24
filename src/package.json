@@ -1,6 +1,6 @@
 {
   "name": "i-gallery",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Image Gallery Plugin for WordPress",
   "main": "index.js",
   "scripts": {
