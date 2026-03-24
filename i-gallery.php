@@ -24,7 +24,7 @@ require_once 'shortcode.php';
 
 require 'plugin-update-checker-4.10/plugin-update-checker.php';
 $updateChecker = Puc_v4_Factory::buildUpdateChecker(
-    'https://raw.githubusercontent.com/IngoStramm/i-gallery/refs/heads/master/info.json',
+    'https://github.com/IngoStramm/i-gallery/raw/refs/heads/main/info.json',
     __FILE__,
     'i-gallery'
 );
