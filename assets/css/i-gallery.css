@@ -1,0 +1,252 @@
+:root {
+  --white: #fff;
+  --black: #000;
+  --blue: #034990;
+  --yellow: #ffad46;
+}
+
+.i-gallery-loader,
+.i-gallery-loader:before,
+.i-gallery-loader:after {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  animation-fill-mode: both;
+  animation: bblFadInOut 1.8s infinite ease-in-out;
+}
+
+.i-gallery-loader {
+  display: block;
+  margin: 20px auto 20px;
+  color: var(--blue);
+  font-size: 7px;
+  position: relative;
+  text-indent: -9999em;
+  transform: translateZ(0);
+  animation-delay: -0.16s;
+}
+
+.i-gallery-loader:before,
+.i-gallery-loader:after {
+  content: "";
+  position: absolute;
+  top: 0;
+}
+
+.i-gallery-loader:before {
+  left: -3.5em;
+  animation-delay: -0.32s;
+}
+
+.i-gallery-loader:after {
+  left: 3.5em;
+}
+
+@keyframes bblFadInOut {
+  0%, 80%, 100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+.i-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+}
+.i-gallery .i-gallery-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.i-gallery .i-gallery-list .i-gallery-list-item {
+  flex: 0 0 calc(25% - 20px);
+}
+.i-gallery .i-gallery-list .i-gallery-list-item .i-gallery-list-btn {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+.i-gallery .i-gallery-list .i-gallery-list-item .i-gallery-list-btn .i-gallery-list-img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: all 0.3s;
+  pointer-events: none;
+}
+.i-gallery .i-gallery-list .i-gallery-list-item .i-gallery-list-btn .i-gallery-list-img-hover {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.35);
+  transition: all 0.3s;
+  pointer-events: none;
+}
+.i-gallery .i-gallery-list .i-gallery-list-item .i-gallery-list-btn .i-gallery-list-img-hover .i-gallery-list-img-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 38px;
+  height: 38px;
+  pointer-events: none;
+}
+.i-gallery .i-gallery-list .i-gallery-list-item .i-gallery-list-btn .i-gallery-list-img-hover .i-gallery-list-img-icon path {
+  fill: var(--white);
+}
+.i-gallery .i-gallery-list .i-gallery-list-item .i-gallery-list-btn .i-gallery-list-img-hover .i-gallery-list-img-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  color: var(--white);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  pointer-events: none;
+}
+.i-gallery .i-gallery-list .i-gallery-list-item .i-gallery-list-btn:hover .i-gallery-list-img-hover {
+  opacity: 1;
+}
+.i-gallery .i-gallery-list .i-gallery-list-item .i-gallery-list-btn:hover .i-gallery-list-img {
+  transform: scale(1.2);
+}
+
+@media (min-width: 768px) {
+  .i-gallery .i-gallery-list {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .i-gallery .i-gallery-list .i-gallery-list-item {
+    flex: 0 0 calc(50% - 20px);
+  }
+}
+@media (min-width: 992px) {
+  .i-gallery .i-gallery-list .i-gallery-list-item {
+    flex: 0 0 calc(33% - 20px);
+  }
+}
+@media (min-width: 1200px) {
+  .i-gallery .i-gallery-list .i-gallery-list-item {
+    flex: 0 0 calc(25% - 20px);
+  }
+}
+.i-gallery-pagination {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.i-gallery-pagination .i-gallery-pagination-btn {
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 0;
+  border: none;
+}
+.i-gallery-pagination .i-gallery-pagination-btn:hover:not(:disabled), .i-gallery-pagination .i-gallery-pagination-btn.i-gallery-pagination-current-page:not(.first-page):not(.last-page) {
+  background-color: var(--yellow);
+}
+.i-gallery-pagination .i-gallery-pagination-btn.first-page:disabled, .i-gallery-pagination .i-gallery-pagination-btn.last-page:disabled {
+  opacity: 0.5;
+}
+.i-gallery-pagination .i-gallery-pagination-btn.first-page:disabled:hover, .i-gallery-pagination .i-gallery-pagination-btn.last-page:disabled:hover {
+  background-color: var(--blue);
+}
+.i-gallery-pagination .i-gallery-pagination-btn svg {
+  display: block;
+  height: 24px;
+  pointer-events: none;
+}
+.i-gallery-pagination .i-gallery-pagination-btn svg path {
+  fill: var(--white);
+}
+
+.i-gallery-modal-container {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 99999;
+}
+.i-gallery-modal-container .i-gallery-modal-popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.i-gallery-modal-container .i-gallery-modal-popup .i-gallery-modal-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 9;
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+}
+.i-gallery-modal-container .i-gallery-modal-popup .i-gallery-modal-btn svg {
+  width: 20px;
+  pointer-events: none;
+}
+.i-gallery-modal-container .i-gallery-modal-popup .i-gallery-modal-btn svg path {
+  fill: var(--white);
+}
+.i-gallery-modal-container .i-gallery-modal-popup .i-gallery-modal-image {
+  display: block;
+  z-index: 1;
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .i-gallery-modal-container .i-gallery-modal-popup {
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: 90vh;
+  }
+  .i-gallery-modal-container .i-gallery-modal-popup .i-gallery-modal-btn {
+    position: static;
+    align-self: flex-end;
+  }
+}
+/*# sourceMappingURL=i-gallery.css.map */

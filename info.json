@@ -1,0 +1,24 @@
+{
+    "name": "I Gallery",
+    "version": "0.0.2",
+    "download_url": "https://github.com/IngoStramm/i-gallery/raw/refs/heads/master/dist/i-gallery.zip",
+    "homepage": "https://agencialaf.com",
+    "requires": "4.7",
+    "tested": "6.9.4",
+    "last_updated": "2026-03-19 09:30:00",
+    "upgrade_notice": "Atualização do I Gallery disponível",
+    "author": "Ingo Stramm",
+    "author_homepage": "https://agencialaf.com",
+    "sections": {
+        "description": "Descrição do I Gallery.",
+        "installation": "A instalação deste plugin deve ser feita pelo Converte Fácil."
+    },
+    "icons": {
+        "1x": "https://github.com/IngoStramm/i-gallery/raw/refs/heads/master/assets/images/plugin-banner-128x128.jpg",
+        "2x": "https://github.com/IngoStramm/i-gallery/raw/refs/heads/master/assets/images/plugin-banner-256x256.jpg"
+    },
+    "banners": {
+        "low": "https://github.com/IngoStramm/i-gallery/raw/refs/heads/master/assets/images/plugin-banner-772x250.jpg",
+        "high": "https://github.com/IngoStramm/i-gallery/raw/refs/heads/master/assets/images/plugin-banner-1544x500.jpg"
+    }
+}
